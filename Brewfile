@@ -1,4 +1,3 @@
-
 tap "homebrew/core"
 tap "homebrew/cask"
 
@@ -14,7 +13,6 @@ brew "postgresql"
 
 brew "nvm"
 brew "pnpm"
-brew "bun"
 
 brew "python"
 brew "uv"
