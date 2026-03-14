@@ -3,10 +3,8 @@ set -e
 
 echo "🚀 Namoneo Mac Dev Setup Starting..."
 
-# Install Xcode CLI tools
 xcode-select --install || true
 
-# Install Homebrew if not installed
 if ! command -v brew &>/dev/null; then
   echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -15,22 +13,18 @@ fi
 brew update
 
 echo "📦 Installing Brew packages..."
-brew bundle
+brew bundle --file=https://raw.githubusercontent.com/Namoneo/mac-setup/main/Brewfile
 
 echo "⚙️ Installing developer tools..."
-bash scripts/install-devtools.sh
+curl -fsSL https://raw.githubusercontent.com/Namoneo/mac-setup/main/scripts/install-devtools.sh | bash
 
-echo "📦 Installing Node environment..."
-bash scripts/install-node.sh
+echo "📦 Installing Node..."
+curl -fsSL https://raw.githubusercontent.com/Namoneo/mac-setup/main/scripts/install-node.sh | bash
 
-echo "🅰️ Installing Angular CLI..."
-bash scripts/install-angular.sh
+echo "🅰️ Installing Angular..."
+curl -fsSL https://raw.githubusercontent.com/Namoneo/mac-setup/main/scripts/install-angular.sh | bash
 
 echo "🤖 Installing AI tools..."
-bash scripts/install-ai.sh
+curl -fsSL https://raw.githubusercontent.com/Namoneo/mac-setup/main/scripts/install-ai.sh | bash
 
-echo "🐚 Configuring shell..."
-cp shell/.zshrc ~/.zshrc
-
-echo ""
-echo "✅ Mac setup completed!"
+echo "✅ Setup completed!"
