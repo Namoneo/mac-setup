@@ -13,7 +13,8 @@ fi
 brew update
 
 echo "📦 Installing Brew packages..."
-brew bundle --file=https://raw.githubusercontent.com/Namoneo/mac-setup/main/Brewfile
+curl -fsSL https://raw.githubusercontent.com/Namoneo/mac-setup/main/Brewfile -o Brewfile
+brew bundle --file=Brewfile
 
 echo "⚙️ Installing developer tools..."
 curl -fsSL https://raw.githubusercontent.com/Namoneo/mac-setup/main/scripts/install-devtools.sh | bash
