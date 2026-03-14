@@ -12,3 +12,5 @@ nvm install --lts
 nvm use --lts
 
 npm install -g pnpm yarn
+
+curl -fsSL https://bun.sh/install | bash
